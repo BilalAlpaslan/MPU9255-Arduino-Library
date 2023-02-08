@@ -24,7 +24,6 @@
  * @brief Initialise MPU9255 module.
  * @return 0 if success, 1 if imu or magnetometer fails
  */
-// get sda scl from user
 uint8_t MPU9255::init(uint8_t sda, uint8_t scl)
 {
   Wire.begin(sda, scl);//enable I2C interface
