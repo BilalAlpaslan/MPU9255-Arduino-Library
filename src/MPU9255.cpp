@@ -20,6 +20,8 @@
 #include "MPU9255.h"
 #include "Arduino.h"
 
+SoftwareI2C softwareI2C; // Create a software I2C instance named softwareI2C for ceating a default softwareI2C instance
+
 /**
  * @brief Initialise MPU9255 module.
  * @return 0 if success, 1 if imu or magnetometer fails
