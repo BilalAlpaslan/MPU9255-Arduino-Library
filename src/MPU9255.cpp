@@ -24,9 +24,10 @@
  * @brief Initialise MPU9255 module.
  * @return 0 if success, 1 if imu or magnetometer fails
  */
-uint8_t MPU9255::init()
+// get sda scl from user
+uint8_t MPU9255::init(uint8_t sda, uint8_t scl)
 {
-  Wire.begin();//enable I2C interface
+  Wire.begin(sda, scl);//enable I2C interface
   Hreset();//reset the chip
   write(MPU_address,CONFIG, 0x03);//set DLPF_CFG to 0b11
   write(MPU_address,SMPLRT_DIV, 0x00);//set prescaler sample rate to 0
