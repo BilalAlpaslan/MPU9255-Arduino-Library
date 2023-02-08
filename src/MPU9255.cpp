@@ -20,7 +20,12 @@
 #include "MPU9255.h"
 #include "Arduino.h"
 
+
+// c++ macros to avoid redefinition of class instance
+#ifndef MPU9255_CPP
+#define MPU9255_CPP
 SoftwareI2C softwareI2C; // Create a software I2C instance named softwareI2C for ceating a default softwareI2C instance
+#endif
 
 /**
  * @brief Initialise MPU9255 module.
