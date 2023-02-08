@@ -21,19 +21,13 @@
 #include "Arduino.h"
 
 
-// c++ macros to avoid redefinition of class instance
-#ifndef MPU9255_CPP
-#define MPU9255_CPP
-SoftwareI2C softwareI2C; // Create a software I2C instance named softwareI2C for ceating a default softwareI2C instance
-#endif
-
 /**
  * @brief Initialise MPU9255 module.
  * @return 0 if success, 1 if imu or magnetometer fails
  */
 uint8_t MPU9255::init(int sda, int scl)
 {
-  softwareI2C.begin(sda, scl);//enable I2C interface
+  SoftwareI2C.begin(sda, scl);//enable I2C interface
   Hreset();//reset the chip
   write(MPU_address,CONFIG, 0x03);//set DLPF_CFG to 0b11
   write(MPU_address,SMPLRT_DIV, 0x00);//set prescaler sample rate to 0
