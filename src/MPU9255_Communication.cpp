@@ -28,10 +28,10 @@
  */
 void MPU9255::requestBytes(uint8_t address, uint8_t subAddress, uint8_t bytes)
 {
-  Wire.beginTransmission(address);
-  Wire.write(subAddress);
-  Wire.endTransmission();
-  Wire.requestFrom(address, bytes);
+  softwareI2C.beginTransmission(address);
+  softwareI2C.write(subAddress);
+  softwareI2C.endTransmission();
+  softwareI2C.requestFrom(address, bytes);
 }
 
 /**
@@ -44,7 +44,7 @@ void MPU9255::readArray(uint8_t* output, char size)
 {
   for(char i = 0; i<size; i++)
   {
-    output[i] = Wire.read();//read byte and put it into rawData table
+    output[i] = softwareI2C.read();//read byte and put it into rawData table
   }
 }
 
@@ -57,7 +57,7 @@ void MPU9255::readArray(uint8_t* output, char size)
 uint8_t MPU9255::read(uint8_t address, uint8_t subAddress)
 {
   requestBytes(address,subAddress,1);//request one byte from the register
-  uint8_t data = Wire.read();//read one byte of data
+  uint8_t data = softwareI2C.read();//read one byte of data
   return data;
 }
 
@@ -69,10 +69,10 @@ uint8_t MPU9255::read(uint8_t address, uint8_t subAddress)
  */
 void MPU9255::write(uint8_t address, uint8_t subAddress, uint8_t data)
 {
-  Wire.beginTransmission(address);
-  Wire.write(subAddress);
-  Wire.write(data);
-  Wire.endTransmission();
+  softwareI2C.beginTransmission(address);
+  softwareI2C.write(subAddress);
+  softwareI2C.write(data);
+  softwareI2C.endTransmission();
 }
 
 /**

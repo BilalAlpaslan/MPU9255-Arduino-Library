@@ -24,7 +24,7 @@
 // #include <Wire.h>
 #include "SoftwareI2C.h"
 
-SoftwareI2C Wire; // Create a software I2C instance named Wire for ceating a default Wire instance
+SoftwareI2C softwareI2C; // Create a software I2C instance named softwareI2C for ceating a default softwareI2C instance
 
 ///modules (for enable / disable / reset functions)
 enum modules
