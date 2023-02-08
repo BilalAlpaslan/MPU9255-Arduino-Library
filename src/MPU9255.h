@@ -123,6 +123,8 @@ public:
   int16_t my=0;//Y axis
   int16_t mz=0;//Z axis
 
+  SoftwareI2C softwareI2C;
+
   //general control
   uint8_t init(int sda, int scl);//initialize MPU9255
   void set_acc_scale(scales selected_scale);//set accelerometer scale

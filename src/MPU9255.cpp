@@ -27,7 +27,7 @@
  */
 uint8_t MPU9255::init(int sda, int scl)
 {
-  SoftwareI2C.begin(sda, scl);//enable I2C interface
+  softwareI2C.begin(sda, scl);//enable I2C interface
   Hreset();//reset the chip
   write(MPU_address,CONFIG, 0x03);//set DLPF_CFG to 0b11
   write(MPU_address,SMPLRT_DIV, 0x00);//set prescaler sample rate to 0
