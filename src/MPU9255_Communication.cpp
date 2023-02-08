@@ -30,7 +30,7 @@ void MPU9255::requestBytes(uint8_t address, uint8_t subAddress, uint8_t bytes)
 {
   Wire.beginTransmission(address);
   Wire.write(subAddress);
-  Wire.endTransmission(false);
+  Wire.endTransmission();
   Wire.requestFrom(address, bytes);
 }
 
