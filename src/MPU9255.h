@@ -126,7 +126,7 @@ public:
   int16_t mz=0;//Z axis
 
   //general control
-  uint8_t init();//initialize MPU9255
+  uint8_t init(int sda, int scl);//initialize MPU9255
   void set_acc_scale(scales selected_scale);//set accelerometer scale
   void set_gyro_scale(scales selected_scale);//set gyroscope scale
   void set_acc_offset(axis selected_axis, int16_t offset);//set accelerometer offset
