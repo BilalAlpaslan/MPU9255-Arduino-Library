@@ -24,7 +24,7 @@
  * @brief Initialise MPU9255 module.
  * @return 0 if success, 1 if imu or magnetometer fails
  */
-uint8_t MPU9255::init(uint8_t sda, uint8_t scl)
+uint8_t MPU9255::init(int sda, int scl)
 {
   Wire.begin(sda, scl);//enable I2C interface
   Hreset();//reset the chip
