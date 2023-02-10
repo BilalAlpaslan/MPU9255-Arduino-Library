@@ -9,6 +9,7 @@ Arduino library for MPU9255 based modules.
 Read acceleration, angular velocity and magnetic field strength on your Arduino board using MPU9255 based IMU module connected via the I2C interface.
 
 ## Features
+- Software I2C
 - Acceleration, angular velocity, magnetic field measurements.
 - Dice temperature measurements using built-in sensor.
 - Selectable scale (from +- 2g , +- 250 dps to +- 16g , +-2000 dps).
